@@ -11,7 +11,7 @@ class LinkedList
 
   end
 
-  def get_first()
+  def get_first
 
   end
 
@@ -23,7 +23,7 @@ class LinkedList
 
   end
 
-  def get_last()
+  def get_last
 
   end
 

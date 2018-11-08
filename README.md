@@ -26,5 +26,16 @@ In plain English define the following terms:
 4.  Draw out a LinkedList and write down the steps to remove a node from the front of the list
 5.  Write down the steps to find the nth element in a linked list.  What is the Big-O of the method?
 
+## Exercises
+
+With your partner clone this repository and fill in the following methods.  There is a spec file to help you test your methods.
+
+1.  `add_first`
+2.  `get_first`
+3.  `length`
+4.  `add_last`
+5.  `get_last`
+6.  `get_at_index`
+
 ## Additional Resources
 - [Wikipedia on Linked Lists](https://en.wikipedia.org/wiki/Linked_list)
