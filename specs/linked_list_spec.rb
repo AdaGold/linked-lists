@@ -1,4 +1,4 @@
-require_relative 'spec_helper'
+require_relative "spec_helper"
 
 describe LinkedList do
   # Arrange
@@ -6,24 +6,24 @@ describe LinkedList do
     @list = LinkedList.new
   end
 
-  describe 'initialize' do
-    it 'can be created' do
+  describe "initialize" do
+    it "can be created" do
 
       # Assert
       expect(@list).must_be_kind_of LinkedList
     end
   end
 
-  xdescribe 'add_first & get_first' do
-    it 'can add values to an empty list' do
+  describe "add_first & get_first" do
+    it "can add values to an empty list" do
       # Act
-        @list.add_first(3)
+      @list.add_first(3)
 
-        # Assert
-        expect(@list.get_first).must_equal 3
+      # Assert
+      expect(@list.get_first).must_equal 3
     end
 
-    it 'will put the last added item to the front of the list' do
+    it "will put the last added item to the front of the list" do
       # Act
       @list.add_first(1)
       @list.add_first(2)
@@ -38,13 +38,12 @@ describe LinkedList do
       expect(@list.get_first).must_equal 3
     end
 
-    it 'will return `nil` for `getFirst` if the list is empty' do
-
+    it "will return `nil` for `getFirst` if the list is empty" do
       expect(@list.get_first).must_be_nil
     end
   end
 
-  xdescribe "length" do
+  describe "length" do
     it "will return 0 for an empty list" do
       expect(@list.length).must_equal 0
     end
@@ -59,7 +58,7 @@ describe LinkedList do
     end
   end
 
-  xdescribe "addLast & getLast" do
+  describe "addLast & getLast" do
     it "will add to the front if the list is empty" do
       @list.add_last(1)
       expect(@list.get_first).must_equal 1
@@ -79,17 +78,15 @@ describe LinkedList do
       expect(@list.get_first).must_equal 2
       expect(@list.get_last).must_equal 4
       expect(@list.length).must_equal 3
-
     end
-
   end
 
-  xdescribe 'get_at_index' do
-    it 'returns nil if the index is outside the bounds of the list' do
+  describe "get_at_index" do
+    it "returns nil if the index is outside the bounds of the list" do
       expect(@list.get_at_index(3)).must_be_nil
     end
 
-    it 'can retrieve an item at an index in the list' do
+    it "can retrieve an item at an index in the list" do
       @list.add_first(1)
       @list.add_first(2)
       @list.add_first(3)
