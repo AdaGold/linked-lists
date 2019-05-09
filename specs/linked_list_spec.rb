@@ -98,4 +98,91 @@ describe LinkedList do
       expect(@list.get_at_index(3)).must_equal 1
     end
   end
+
+  describe "delete" do
+    it "will return nil if the list is empty" do
+      expect(@list.delete("something")).must_be_nil
+    end
+
+    it "will return nil if the element is not in the list" do
+      @list.add_first(3)
+      @list.add_first(4)
+      expect(@list.delete(5)).must_be_nil
+      expect(@list.length).must_equal 2
+    end
+
+    it "will return the index of the node it deleted" do
+      @list.add_first(3)
+      @list.add_first(4)
+      @list.add_first(5)
+      expect(@list.delete(3)).must_equal 2
+      expect(@list.delete(5)).must_equal 0
+
+      expect(@list.length).must_equal 1
+    end
+  end
+
+  describe "find_middle_value" do
+    it "returns nil for an empty list" do
+      expect(@list.find_middle_value).must_be_nil
+    end
+
+    it "rounds down for an even number of elements" do
+      @list.add_first(3)
+      @list.add_first(5)
+      @list.add_first(2)
+      @list.add_first(4)
+
+      expect(@list.find_middle_value).must_equal 2
+    end
+    it "picks the middle element for an odd numbered length list" do
+      @list.add_first(3)
+      @list.add_first(5)
+      @list.add_first(1)
+      @list.add_first(4)
+      @list.add_first(6)
+      expect(@list.find_middle_value).must_equal 1
+    end
+  end
+
+  describe "find_nth_from_end" do
+    it "returns nil for an empty list" do
+      expect(@list.find_nth_from_end(3)).must_be_nil
+    end
+
+    it "will return nil if n is >= length" do
+      @list.add_first(3)
+      expect(@list.find_nth_from_end(3)).must_be_nil
+    end
+
+    it "will return the nth from the end if n < length" do
+      @list.add_first(3)
+      @list.add_first(4)
+      @list.add_first(5)
+
+      expect(@list.find_nth_from_end(0)).must_equal 3
+      expect(@list.find_nth_from_end(1)).must_equal 4
+      expect(@list.find_nth_from_end(2)).must_equal 5
+    end
+  end
+
+  describe "has_cycle" do
+    it "will return false if the list is empty" do
+      expect(@list.has_cycle).must_equal false
+    end
+
+    it "will return true if it has a cycle" do
+      @list.add_first(3)
+      @list.add_first(4)
+      @list.create_cycle
+
+      expect(@list.has_cycle).must_equal true
+    end
+    it "will return false if it doesn't have a cycle" do
+      @list.add_first(3)
+      @list.add_first(4)
+
+      expect(@list.has_cycle).must_equal false
+    end
+  end
 end
