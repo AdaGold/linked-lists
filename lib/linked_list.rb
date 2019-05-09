@@ -24,6 +24,7 @@ class LinkedList
   def get_first
     return @head.value if @head != nil
     # raise NotImplementedError, "Please implement get_first"
+
   end
 
   # This method returns the length of the list
@@ -33,13 +34,13 @@ class LinkedList
     count = 0
     current = @head
 
-    while current != nil
-      current = current.next
+    until current.nil?
       count += 1
+      current = current.next
     end
 
     return count
-    # raise NotImplementedError, "Please implement length"
+
   end
 
   # This method takes a value and
@@ -48,36 +49,31 @@ class LinkedList
   # Time Complexiy:
   # Space Complexity:
   def add_last(value)
-    node = Node.new(value)
+    current = @head
+    newNode = Node.new(value, nil)
 
-    if @head.nil?
-      @head = node
+    if current.nil?
+      @head = newNode
     else
-      current = @head
-      while current.next != nil
+      until current.next.nil?
         current = current.next
       end
 
-      current.next = node
+      current.next = newNode
     end
-
-    # raise NotImplementedError, "Please implement add_last"
   end
 
-  # This method returns the last value in the list
-  # Time Complexiy:
-  # Space Complexity:
-  def get_last
-    return nil if @head.nil?
+  def get_last()
+    if @head.nil?
+      return nil
+    else
+      current = @head
+      until current.next.nil?
+        current = current.next
+      end
 
-    current = @head
-
-    while current.next != nil
-      current = current.next
+      return current.data
     end
-
-    return current.value
-    # raise NotImplementedError, "Please implement get_last"
   end
 
   # This method takes an index and
