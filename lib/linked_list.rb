@@ -57,4 +57,57 @@ class LinkedList
   def get_at_index(index)
     raise NotImplementedError, "Please implement get_at_index"
   end
+
+  # This method takes a value and
+  #   removes the first node with that
+  #   value from the list.  If it does
+  #   not exist, it returns nil.
+  # Time Complexiy:
+  # Space Complexity:
+  def delete(value)
+    raise NotImplementedError
+  end
+
+  # Advanced Exercises
+  # This method returns the value at the
+  #   middle node in the list
+  # Time Complexiy:
+  # Space Complexity:
+  def find_middle_value
+    raise NotImplementedError
+  end
+
+  # find the nth node from the end and
+  #   return its value
+  # Time Complexiy:
+  # Space Complexity:
+  def find_nth_from_end(n)
+    raise NotImplementedError
+  end
+
+  # This method checks if the linked has
+  #   a cycle. A cycle exists if any node
+  #   in the linked list links to a node
+  #   already visited.  It returns true
+  #   if a cycle is found, false otherwise.
+  # Time Complexiy:
+  # Space Complexity:
+  def has_cycle
+    raise NotImplementedError
+  end
+
+  # Helper method for tests
+  # Creates a cycle in the linked list for testing purposes
+  # Assumes the linked list has at least one node
+  def create_cycle
+    return if @head == nil # don't do anything if the linked list is empty
+
+    # navigate to last node
+    current = @head
+    while current.next != nil
+      current = current.next
+    end
+
+    current.next = @head # make the last node link to first node
+  end
 end
