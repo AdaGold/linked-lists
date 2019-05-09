@@ -1,4 +1,4 @@
-require_relative 'spec_helper'
+require_relative "spec_helper"
 
 describe LinkedList do
   # Arrange
@@ -6,24 +6,24 @@ describe LinkedList do
     @list = LinkedList.new
   end
 
-  describe 'initialize' do
-    it 'can be created' do
+  describe "initialize" do
+    it "can be created" do
 
       # Assert
       expect(@list).must_be_kind_of LinkedList
     end
   end
 
-  xdescribe 'add_first & get_first' do
-    it 'can add values to an empty list' do
+  xdescribe "add_first & get_first" do
+    it "can add values to an empty list" do
       # Act
-        @list.add_first(3)
+      @list.add_first(3)
 
-        # Assert
-        expect(@list.get_first).must_equal 3
+      # Assert
+      expect(@list.get_first).must_equal 3
     end
 
-    it 'will put the last added item to the front of the list' do
+    it "will put the last added item to the front of the list" do
       # Act
       @list.add_first(1)
       @list.add_first(2)
@@ -38,8 +38,7 @@ describe LinkedList do
       expect(@list.get_first).must_equal 3
     end
 
-    it 'will return `nil` for `getFirst` if the list is empty' do
-
+    it "will return `nil` for `getFirst` if the list is empty" do
       expect(@list.get_first).must_be_nil
     end
   end
@@ -79,17 +78,15 @@ describe LinkedList do
       expect(@list.get_first).must_equal 2
       expect(@list.get_last).must_equal 4
       expect(@list.length).must_equal 3
-
     end
-
   end
 
-  xdescribe 'get_at_index' do
-    it 'returns nil if the index is outside the bounds of the list' do
+  xdescribe "get_at_index" do
+    it "returns nil if the index is outside the bounds of the list" do
       expect(@list.get_at_index(3)).must_be_nil
     end
 
-    it 'can retrieve an item at an index in the list' do
+    it "can retrieve an item at an index in the list" do
       @list.add_first(1)
       @list.add_first(2)
       @list.add_first(3)
@@ -99,6 +96,89 @@ describe LinkedList do
       expect(@list.get_at_index(1)).must_equal 3
       expect(@list.get_at_index(2)).must_equal 2
       expect(@list.get_at_index(3)).must_equal 1
+    end
+  end
+
+  describe "delete" do
+    it "will return nil if the list is empty" do
+      expect(@list.delete("something")).must_be_nil
+    end
+
+    it "will return nil if the element is not in the list" do
+      @list.add_first(3)
+      @list.add_first(4)
+      expect(@list.delete(5)).must_be_nil
+    end
+
+    it "will return the index of the node it deleted" do
+      @list.add_first(3)
+      @list.add_first(4)
+      @list.add_first(5)
+      expect(@list.delete(3)).must_equal 2
+    end
+  end
+
+  describe "find_middle_value" do
+    it "returns nil for an empty list" do
+      expect(@list.find_middle_value).must_be_nil
+    end
+
+    it "rounds down for an even number of elements" do
+      @list.add_first(3)
+      @list.add_first(5)
+      @list.add_first(2)
+      @list.add_first(4)
+
+      expect(@list.find_middle_value).must_equal 2
+    end
+    it "picks the middle element for an odd numbered length list" do
+      @list.add_first(3)
+      @list.add_first(5)
+      @list.add_first(1)
+      @list.add_first(4)
+      @list.add_first(6)
+      expect(@list.find_middle_value).must_equal 1
+    end
+  end
+
+  describe "find_nth_from_end" do
+    it "returns nil for an empty list" do
+      expect(@list.find_nth_from_end).must_be_nil
+    end
+
+    it "will return nil if n is >= length" do
+      @list.add_first(3)
+      expect(@list.find_nth_from_end(3)).must_be_nil
+    end
+
+    it "will return the nth from the end if n < length" do
+      @list.add_first(3)
+      @list.add_first(4)
+      @list.add_first(5)
+
+      expect(find_nth_from_end(0)).must_equal 3
+      expect(find_nth_from_end(1)).must_equal 4
+      expect(find_nth_from_end(2)).must_equal 5
+    end
+  end
+
+  describe "has_cycle" do
+    it "will return false if the list is empty" do
+      expect(@list.has_cycle).must_equal false
+    end
+
+    it "will return true if it has a cycle" do
+      @list.add_first(3)
+      @list.add_first(4)
+      @list.create_cycle
+
+      expect(@list.has_cycle).must_equal true
+    end
+    it "will return false if it doesn't have a cycle" do
+      @list.add_first(3)
+      @list.add_first(4)
+
+      expect(@list.has_cycle).must_equal false
     end
   end
 end
