@@ -65,7 +65,7 @@ class LinkedList
   # Time Complexiy:
   # Space Complexity:
   def delete(value)
-    raise NotImplementedError
+    raise NotImplementedError, "Please implement delete"
   end
 
   # Advanced Exercises
@@ -74,7 +74,7 @@ class LinkedList
   # Time Complexiy:
   # Space Complexity:
   def find_middle_value
-    raise NotImplementedError
+    raise NotImplementedError, "Please implement find_middle_value"
   end
 
   # find the nth node from the end and
@@ -82,7 +82,7 @@ class LinkedList
   # Time Complexiy:
   # Space Complexity:
   def find_nth_from_end(n)
-    raise NotImplementedError
+    raise NotImplementedError, "Please implement find_nth_from_end"
   end
 
   # This method checks if the linked has
@@ -93,7 +93,7 @@ class LinkedList
   # Time Complexiy:
   # Space Complexity:
   def has_cycle
-    raise NotImplementedError
+    raise NotImplementedError, "Please implement has_cycle"
   end
 
   # Helper method for tests
