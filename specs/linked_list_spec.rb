@@ -14,7 +14,7 @@ describe LinkedList do
     end
   end
 
-  xdescribe "add_first & get_first" do
+  describe "add_first & get_first" do
     it "can add values to an empty list" do
       # Act
       @list.add_first(3)
@@ -43,7 +43,7 @@ describe LinkedList do
     end
   end
 
-  xdescribe "length" do
+  describe "length" do
     it "will return 0 for an empty list" do
       expect(@list.length).must_equal 0
     end
@@ -58,7 +58,7 @@ describe LinkedList do
     end
   end
 
-  xdescribe "addLast & getLast" do
+  describe "addLast & getLast" do
     it "will add to the front if the list is empty" do
       @list.add_last(1)
       expect(@list.get_first).must_equal 1
@@ -81,7 +81,7 @@ describe LinkedList do
     end
   end
 
-  xdescribe "get_at_index" do
+  describe "get_at_index" do
     it "returns nil if the index is outside the bounds of the list" do
       expect(@list.get_at_index(3)).must_be_nil
     end
@@ -108,6 +108,7 @@ describe LinkedList do
       @list.add_first(3)
       @list.add_first(4)
       expect(@list.delete(5)).must_be_nil
+      expect(@list.length).must_equal 2
     end
 
     it "will return the index of the node it deleted" do
@@ -115,6 +116,9 @@ describe LinkedList do
       @list.add_first(4)
       @list.add_first(5)
       expect(@list.delete(3)).must_equal 2
+      expect(@list.delete(5)).must_equal 0
+
+      expect(@list.length).must_equal 1
     end
   end
 
@@ -143,7 +147,7 @@ describe LinkedList do
 
   describe "find_nth_from_end" do
     it "returns nil for an empty list" do
-      expect(@list.find_nth_from_end).must_be_nil
+      expect(@list.find_nth_from_end(3)).must_be_nil
     end
 
     it "will return nil if n is >= length" do
@@ -156,9 +160,9 @@ describe LinkedList do
       @list.add_first(4)
       @list.add_first(5)
 
-      expect(find_nth_from_end(0)).must_equal 3
-      expect(find_nth_from_end(1)).must_equal 4
-      expect(find_nth_from_end(2)).must_equal 5
+      expect(@list.find_nth_from_end(0)).must_equal 3
+      expect(@list.find_nth_from_end(1)).must_equal 4
+      expect(@list.find_nth_from_end(2)).must_equal 5
     end
   end
 
