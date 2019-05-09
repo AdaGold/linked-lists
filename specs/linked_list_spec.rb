@@ -99,7 +99,7 @@ describe LinkedList do
     end
   end
 
-  describe "delete" do
+  xdescribe "delete" do
     it "will return nil if the list is empty" do
       expect(@list.delete("something")).must_be_nil
     end
@@ -118,7 +118,7 @@ describe LinkedList do
     end
   end
 
-  describe "find_middle_value" do
+  xdescribe "find_middle_value" do
     it "returns nil for an empty list" do
       expect(@list.find_middle_value).must_be_nil
     end
@@ -141,7 +141,7 @@ describe LinkedList do
     end
   end
 
-  describe "find_nth_from_end" do
+  xdescribe "find_nth_from_end" do
     it "returns nil for an empty list" do
       expect(@list.find_nth_from_end).must_be_nil
     end
@@ -162,7 +162,7 @@ describe LinkedList do
     end
   end
 
-  describe "has_cycle" do
+  xdescribe "has_cycle" do
     it "will return false if the list is empty" do
       expect(@list.has_cycle).must_equal false
     end
