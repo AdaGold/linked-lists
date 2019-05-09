@@ -37,5 +37,7 @@ With your partner clone this repository and fill in the following methods.  Ther
 5.  `get_last`
 6.  `get_at_index`
 
+If you want additional practice you can complete the additional methods.
+
 ## Additional Resources
 - [Wikipedia on Linked Lists](https://en.wikipedia.org/wiki/Linked_list)
