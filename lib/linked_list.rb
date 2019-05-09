@@ -40,7 +40,6 @@ class LinkedList
     end
 
     return count
-
   end
 
   # This method takes a value and
@@ -72,7 +71,7 @@ class LinkedList
         current = current.next
       end
 
-      return current.data
+      return current.value
     end
   end
 
