@@ -2,8 +2,6 @@
 
 This repository is designed to help students practice building a LinkedList class.
 
-It is intended to go with [this](https://adaacademy.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=bf9edf20-8a83-409f-af82-aa46000f81ee) video and [these](https://docs.google.com/presentation/d/1FJc8ygUsABmg8mTOMTNr2s5XHf5WvyNDp_EubYjYxZ0/edit#slide=id.p1) slides.
-
 ## Questions for Students:
 
 With your pair answer the following questions:

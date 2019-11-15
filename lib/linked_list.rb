@@ -9,7 +9,7 @@ class LinkedList
 
   # Time complexity - ?
   # Space complexity - ?
-  def add_first(value)
+  def add_first(data)
 
   end
 
@@ -27,7 +27,7 @@ class LinkedList
 
   # Time complexity - ?
   # Space complexity - ?
-  def add_last(value)
+  def add_last(data)
 
   end
 
