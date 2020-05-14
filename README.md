@@ -2,6 +2,8 @@
 
 This repository is designed to help students practice building a LinkedList class.
 
+**Due Monday May 11th 6pm**
+
 ## Questions for Students:
 
 With your pair answer the following questions:
