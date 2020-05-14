@@ -89,6 +89,9 @@ describe LinkedList do
 
     end
 
+    it "will return nil with get_last for an empty list" do
+      expect(@list.get_last).must_be_nil
+    end
   end
 
   xdescribe 'get_at_index' do
