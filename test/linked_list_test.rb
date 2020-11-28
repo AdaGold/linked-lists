@@ -86,7 +86,6 @@ describe LinkedList do
       expect(@list.get_first).must_equal 2
       expect(@list.get_last).must_equal 4
       expect(@list.length).must_equal 3
-
     end
 
     it "will return nil with get_last for an empty list" do
