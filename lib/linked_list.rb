@@ -10,19 +10,32 @@ class LinkedList
   # Time complexity - ?
   # Space complexity - ?
   def add_first(data)
-
+    new_node = Node.new(data)
+    new_node.next = @head
+    @head = new_node
+    return @head.data
   end
 
   # Time complexity - ?
   # Space complexity - ?
   def get_first
-
+    if @head
+      return @head.data
+    end
+    return nil
   end
 
   # Time complexity - ?
   # Space complexity - ?
   def length
-    return 0
+    count = 0
+    current = @head
+    while current != nil
+      count += 1
+      current = current.next
+    end
+
+    return count
   end
 
   # Time complexity - ?
